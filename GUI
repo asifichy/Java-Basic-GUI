@@ -1,0 +1,57 @@
+Java GUI from Md. Asif Imtiyaj Chowdhury.
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+public class GUI implements ActionListener {
+    //int count = 0;
+    
+    public GUI ()
+    {
+        JFrame frame = new JFrame();
+        
+        JButton button = new JButton("CLick!");
+        button.addActionListener(this);
+        
+        JLabel label = new JLabel ("Number of clicks: 0");
+        
+        JPanel panel = new JPanel();
+        panel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
+        panel.setLayout(new GridLayout(0, 1));
+        panel.add(button);
+        panel.add(label);
+        
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new GridLayout(0, 1));
+        frame.setTitle("Our GUI!");
+        frame.pack();
+        frame.setVisible(true);
+        
+    }
+
+    
+    public static void main(String[] args) {
+        new GUI();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //count++;
+        int count = 0;
+        JLabel label = new JLabel ("Number of clicks: 0");
+        label.setText("Number of clicks: " + count++);
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                
+    }
+    
+}
